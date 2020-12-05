@@ -1,0 +1,64 @@
+段,地址,长度,存储空间,物理存储块
+codestart,0x000000,0x000002,BEGIN,M0 Vector RAM
+.pinit,0x008000,0x000000,RAML0,L0 SARAM
+.cinit,0x008000,0x000090,RAML0,L0 SARAM
+ramfuncs,0x008090,0x00001f,RAML0,L0 SARAM
+.text,0x009000,0x002a2e,RAML1,L1 SARAM
+csm_rsvd,0x33ff80,0x000076,CSM_RSVD,FLASH
+csmpasswds,0x33fff8,0x000008,CSM_PWL,Password
+.adc_cal,0x380080,0x000007,ADC_CAL,ADC Calibration Data and PARTID
+.reset,0x3fffc0,0x000002,RESET,BROM Vector ROM
+.sysmem,0x000400,0x000400,RAMM1,M1 SARAM
+DevEmuRegsFile,0x000880,0x0000d0,DEV_EMU,Peripheral Frame 0
+FlashRegsFile,0x000a80,0x000008,FLASH_REGS,Peripheral Frame 0
+CsmRegsFile,0x000ae0,0x000010,CSM,Peripheral Frame 0
+AdcMirrorFile,0x000b00,0x000010,ADC_MIRROR,Peripheral Frame 0
+XintfRegsFile,0x000b20,0x00001e,XINTF,Peripheral Frame 0
+CpuTimer0RegsFile,0x000c00,0x000008,CPU_TIMER0,Peripheral Frame 0
+CpuTimer1RegsFile,0x000c08,0x000008,CPU_TIMER1,Peripheral Frame 0
+CpuTimer2RegsFile,0x000c10,0x000008,CPU_TIMER2,Peripheral Frame 0
+PieCtrlRegsFile,0x000ce0,0x00001a,PIE_CTRL,Peripheral Frame 0
+PieVectTableFile,0x000d00,0x000100,PIE_VECT,PIE Vector RAM
+DmaRegsFile,0x001000,0x0000e0,DMA,Peripheral Frame 0
+McbspaRegsFile,0x005000,0x000025,MCBSPA,Peripheral Frame 3
+McbspbRegsFile,0x005040,0x000025,MCBSPB,Peripheral Frame 3
+ECanaRegsFile,0x006000,0x000034,ECANA,Peripheral Frame 1
+ECanaLAMRegsFile,0x006040,0x000040,ECANA_LAM,Peripheral Frame 1
+ECanaMOTSRegsFile,0x006080,0x000040,ECANA_MOTS,Peripheral Frame 1
+ECanaMOTORegsFile,0x0060c0,0x000040,ECANA_MOTO,Peripheral Frame 1
+ECanaMboxesFile,0x006100,0x000100,ECANA_MBOX,Peripheral Frame 1
+ECanbRegsFile,0x006200,0x000034,ECANB,Peripheral Frame 1
+ECanbLAMRegsFile,0x006240,0x000040,ECANB_LAM,Peripheral Frame 1
+ECanbMOTSRegsFile,0x006280,0x000040,ECANB_MOTS,Peripheral Frame 1
+ECanbMOTORegsFile,0x0062c0,0x000040,ECANB_MOTO,Peripheral Frame 1
+ECanbMboxesFile,0x006300,0x000100,ECANB_MBOX,Peripheral Frame 1
+EPwm1RegsFile,0x006800,0x000022,EPWM1,Peripheral Frame 1
+EPwm2RegsFile,0x006840,0x000022,EPWM2,Peripheral Frame 1
+EPwm3RegsFile,0x006880,0x000022,EPWM3,Peripheral Frame 1
+EPwm4RegsFile,0x0068c0,0x000022,EPWM4,Peripheral Frame 1
+EPwm5RegsFile,0x006900,0x000022,EPWM5,Peripheral Frame 1
+EPwm6RegsFile,0x006940,0x000022,EPWM6,Peripheral Frame 1
+ECap1RegsFile,0x006a00,0x000020,ECAP1,Peripheral Frame 1
+ECap2RegsFile,0x006a20,0x000020,ECAP2,Peripheral Frame 1
+ECap3RegsFile,0x006a40,0x000020,ECAP3,Peripheral Frame 1
+ECap4RegsFile,0x006a60,0x000020,ECAP4,Peripheral Frame 1
+ECap5RegsFile,0x006a80,0x000020,ECAP5,Peripheral Frame 1
+ECap6RegsFile,0x006aa0,0x000020,ECAP6,Peripheral Frame 1
+EQep1RegsFile,0x006b00,0x000040,EQEP1,Peripheral Frame 1
+EQep2RegsFile,0x006b40,0x000040,EQEP2,Peripheral Frame 1
+GpioCtrlRegsFile,0x006f80,0x00002e,GPIOCTRL,Peripheral Frame 1
+GpioDataRegsFile,0x006fc0,0x000020,GPIODAT,Peripheral Frame 1
+GpioIntRegsFile,0x006fe0,0x00000a,GPIOINT,Peripheral Frame 1
+SysCtrlRegsFile,0x007010,0x000020,SYSTEM,Peripheral Frame 2
+SpiaRegsFile,0x007040,0x000010,SPIA,Peripheral Frame 2
+SciaRegsFile,0x007050,0x000010,SCIA,Peripheral Frame 2
+XIntruptRegsFile,0x007070,0x000010,XINTRUPT,Peripheral Frame 2
+AdcRegsFile,0x007100,0x00001e,ADC,Peripheral Frame 2
+ScibRegsFile,0x007750,0x000010,SCIB,Peripheral Frame 2
+ScicRegsFile,0x007770,0x000010,SCIC,Peripheral Frame 2
+I2caRegsFile,0x007900,0x000022,I2CA,Peripheral Frame 2
+.ebss,0x00c000,0x000363,RAML4,L4 SARAM
+.cio,0x00c380,0x000120,RAML4,L4 SARAM
+.econst,0x00d000,0x00025a,RAML5,L5 SARAM
+.stack,0x00e000,0x000300,RAML6,L6 SARAM
+CsmPwlFile,0x33fff8,0x000008,CSM_PWL,BROM Vector ROM

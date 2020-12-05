@@ -1,0 +1,6 @@
+变量,地址,段,存储空间,物理存储块,存储器类型
+init_zone7,0x9A12,.text,RAML1,L1 SARAM,RAM
+main,0x998B,.text,RAML1,L1 SARAM,RAM
+init_mcbsp_spi,0x9A4D,.text,RAML1,L1 SARAM,RAM
+mcbsp_write,0x9A85,.text,RAML1,L1 SARAM,RAM
+init_AD9747,0x9A8E,.text,RAML1,L1 SARAM,RAM

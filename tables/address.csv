@@ -1,0 +1,5 @@
+变量,地址,段
+dataIO,0xB6DA,.text
+processing,0xB6BD,.text
+currentBuffer.input,0xC1C0,.ebss
+currentBuffer.output,0xC240,.ebss

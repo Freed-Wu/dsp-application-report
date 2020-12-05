@@ -1,0 +1,57 @@
+\documentclass{njustthesis}
+\setCJKfamilyfont{simfang}{simfang}
+\njustsetup{%
+  author = 吴振宇,
+  id = 916101630117,
+  discipline = 电子信息工程,
+  title = DSP 应用技术,
+  title* = DSP Application Technology,
+  cover-title = DSP 应用技术\\实验报告,
+  abstract-prefix = 实验报告,
+  header-title = DSP 应用技术实验报告,
+  supervisor = 李\CJKfamily{simfang}{彧}晟,
+  supervisor-title = 讲师,
+  judge = 李\CJKfamily{simfang}{彧}晟,
+  judge-title = 讲师,
+  signature = \includegraphics{signature},
+}
+\usepackage{boxie}
+\setminted{%
+  breakanywhere,
+  breakanywheresymbolpre = {},
+  breaksymbolleft = {},
+  breaksymbolindentleftnchars = 0,
+}
+\renewcommand{\listoflistingscaption}{程序清单}
+\renewcommand{\listingscaption}{程序}
+\usepackage{csvsimple}
+\usepackage{booktabs}
+\usepackage{subfiles}
+\usepackage{subcaption}
+\usepackage{fvextra}
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+\numberwithin{Exercise}{chapter}
+\numberwithin{equation}{chapter}
+\numberwithin{listing}{chapter}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\begin{document}
+
+\maketitle
+
+\frontmatter
+\tableofcontents
+\listoffigures
+\listoftables
+\listoflistings%
+\listofexercises%
+
+\mainmatter%
+\subfile{subfiles/test}
+\subfile{subfiles/ramgen}
+\subfile{subfiles/ad}
+\subfile{subfiles/fir}
+
+\end{document}
+

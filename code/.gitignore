@@ -1,0 +1,7 @@
+Debug/
+targetConfigs/
+.settings/
+.ccsproject
+.cproject
+.project
+*.ccxml
