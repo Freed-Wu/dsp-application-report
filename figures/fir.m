@@ -1,31 +1,38 @@
 %% input data
-% two-column dat file will be import as a complex
-data = csvread('data/reality.dat');
-F = real(data);
-x = imag(data)/max(imag(data));
+data = csvread('data/reality.csv');
+% remove header
+data(1, :) = [];
+f = data(:, 1);
+x = data(:, 2);
+x /= max(x);
+X = 20*log10(x);
+fs = 20e3;
 
-%% coefficient generate
-% if you use matlab, please comment this line
+%% coefficients generate
+% if you use matlab, please comment this line, because matlab has loaded
+% this package when it startups. i load this package only when i need fir1()
+% in order to save startup time.
 pkg load signal;
 N = 48;
-fs = 20e3;
-f = [1:N/2]*fs/N;
 h = fir1(N, [0.1, 0.2], 'bandpass');
-% NOTE: due to precision, the coefficient maybe become different
-hm = round(h*fix(32768/max(h)));
-y = abs(fft(hm)(1:N/2));
-y = y/max(y);
-Y = interp1(f, y, F, 'spline');
-for i = 1:length(Y)
-    if isnan(Y(i)) || Y(i) < 0
-        Y(i) = 0;
-    end
-end
-plot(F, Y);
+% NOTE: due to precision, the coefficients maybe become different
+hm = round(h*fix(32767/max(h)));
+% output coefficients
+csvwrite('tables/fir.csv', [0:N; hm]');
+% remember to add header for the table
+% 次数,系数
+
+%% plot amplitude frequency curve
+smaple_number = 512;
+[H, W] = freqz(hm, 1, smaple_number, [], fs);
+% modify freqz_plot()
+mag = 20 * log10 (abs (H));
+mag -= max(mag);
+phase = unwrap (arg (H));
+plot (W, mag);
 hold on;
-plot(F, x);
-err = abs(Y-x);
-plot(F, err);
+plot(f, X);
 xlabel('$f$/Hz');
-legend('therom', 'reality', 'error');
+ylabel('$20 \lg A$/dB')
+legend('theorem', 'reality');
 print -dpdflatexstandalone '/tmp/fir.tex';

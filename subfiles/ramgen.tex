@@ -82,7 +82,7 @@ for(i=0;i<1024;i++)
     \centering
     \includegraphics[
       width = \linewidth,
-    ]{figures/lfm_simulation.pdf}
+    ]{figures/lfm.pdf}
     \caption{仿真}%
     \label{fig:lfm/simulation}
   \end{subfigure}
@@ -110,7 +110,7 @@ for(i=0;i<1024;i++)
 
 \begin{listing}
   \centering
-  \langCVfile[matlab][][matlab]{figures/lfmplot.m}{figures/lfmplot.m}
+  \langCVfile[matlab][][matlab]{figures/lfm.m}{figures/lfm.m}
   \caption{仿真代码}%
   \label{lst:plot}
 \end{listing}
@@ -149,8 +149,6 @@ for(i=0;i<1024;i++)
   \tiny
   \csvautobooktabular[respect percent]{tables/diff.csv}
 \end{table}
-
-\newpage
 
 \begin{Exercise}
   在保持源文件功能正确的前提下，仅修改 .cmd 配置命令文件，改变段的地址分配，链

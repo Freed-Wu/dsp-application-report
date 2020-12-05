@@ -3,7 +3,7 @@ i = 0:1023;
 z = cos(39062.*pi.*((i - 512)/1024*16/625).^2);
 plot(i, z);
 % if your operating system is not Unix, please modify the path
-print -dpdflatexstandalone '/tmp/lfm_simulation.tex';
+print -dpdflatexstandalone '/tmp/lfm.tex';
 
 %% direct digital synthesis
 x = sin(2*pi*i/1024);

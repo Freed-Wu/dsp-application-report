@@ -23,12 +23,14 @@
 
 \begin{Answer}
   利用程序~\ref{lst:fir}设计的参数指标见表~\ref{tab:fir}。由
-  程序~\ref{lst:fir_design}设计的数字滤波器幅频曲线见图~\ref{fig:fir}。
+  程序~\ref{lst:fir_design}设计的数字滤波器理论幅频曲线和实验测量得到的实际幅
+  频曲线见图~\ref{fig:fir}。
 
   可能的误差来源：
 
   \begin{itemize}
-    \item 定标舍入误差；
+    \item 噪声。注意图~\ref{fig:fir}离主瓣越远，信噪比越低，误差越大。
+    \item 定标舍入误差。
     \item 示波器光标测量误差。
   \end{itemize}
 \end{Answer}
@@ -258,16 +260,24 @@ interrupt void epwm1_timer_adc_isr(void)    //中断函数
 
 \begin{Answer}
   系统实时性取决于处理时间和数据输入时间的大小关系，以该 FIR 滤波器系统为例，
-  因为执行时间小与采样时间，所以该系统实时。
+  因为执行时间小于采样时间，所以该系统实时。
 \end{Answer}
 
 \section{实验总结}%
 \label{sec:\arabic{chapter}conclusion}
 
+程序~\ref{lst:fir}要将理论和实际的幅频特性曲线在一幅图上展示的代码有一定难度
+，花费了我一定时间。
+
 一些需要注意的地方：
 
 \begin{itemize}
-  \item 实验室的电脑和我的电脑软件版本和输出精度不同，程序~\ref{lst:fir}的结果不一样。
+  \item 实验室的电脑和我的电脑软件版本和输出精度不同，程序~\ref{lst:fir}得到
+    的表~\ref{tab:fir}的结果不一样。但幅频曲线近乎重合，误差可以忽略。
+  \item 分贝电压是 $20 \lg u$ ，不是 $10 \lg u$ ，写代码时需要注意。
+  \item 数字滤波器输出的结果需要移位后到变量 Da\_out 的类型 int 才可以正常输
+    出， 18 是一个实验得到的结果。不光是本实验的带通滤波器，隔壁实验的低通滤
+    波器也是 18 。
 \end{itemize}
 
 \end{document}
